@@ -36,8 +36,8 @@ class Game
   attr_accessor :continue
 
   def initialize(player1 , player2)
-    @player1 = Player.new(player1) #= "Player1" if player1 == "")
-    @player2 = Player.new(player2) #= "Player2" if player2 == "")
+    @player1 = player1 != ""  ? Player.new(player1): Player.new("Player1")
+    @player2 = player2 != ""  ? Player.new(player2): Player.new("Player2")
     @current_player = @player1
     @continue = true
   end
